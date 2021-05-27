@@ -23,7 +23,7 @@ const getJobadd = async (req, res, next) => {
     res.json({
       success: true,
       msg: 'show selected jobadd',
-      data: jobadds
+      data: jobadd
     })
   } catch(err) {
     next(err)
