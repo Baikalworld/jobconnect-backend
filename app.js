@@ -33,4 +33,4 @@ app.get('/', (req, res) => res.send('hello!!!'))
 app.use('/jobadds', jobadds)
 app.use(errorHandler);
 
-app.listen(process.env.PORT || 5000, () => console.log('Started up server on http://localhost:5000'.rainbow.bold.inverse))
+app.listen(process.env.PORT || 5000, () => console.log('Started up server on http://localhost:5000'.rainbow.bold.inverse))*/
