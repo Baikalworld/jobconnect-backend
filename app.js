@@ -6,10 +6,10 @@ const express = require('express');
 
 //const jobadds = require('./api/jobadds');
 const errorHandler = require('./middlewares/error')
-//const connectDB = require('./dbinit');
+const connectDB = require('./dbinit');
 
 const app = express();
-//connectDB();
+connectDB();
 //app.use(cors());
 app.use(express.json());
 app.get('/', (req, res) => res.send('hello!!!'))
