@@ -33,13 +33,26 @@ const getJobadd = async (req, res, next) => {
 
 const createJobadd = async (req, res, next) => {
   try {
-      const { add_id, add_title, add_date } = req.body;
-      const jobadd = await Jobadd.create({ add_id, add_title, add_date })
+      const { 
+        addTitle,
+        addDate,
+        addLocation,
+        addDesc,
+        addFull
+      } = req.body;
+
+      const jobadd = await Jobadd.create({
+        addTitle,
+        addDate,
+        addLocation,
+        addDesc,
+        addFull        
+      })
 
       res.json({
         success: true,
         msg: 'new jobadd created',
-        data: jobadds
+        data: jobadd
       })
     } catch(err) {
       next(err)
