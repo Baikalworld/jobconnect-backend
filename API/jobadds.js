@@ -2,7 +2,7 @@ const express = require("express");
 
 const {
   getJobadd,
-  getJobadds,
+  // getJobadds,
   createJobadd,
   deleteJobadd,
   updateJobadd
@@ -12,7 +12,7 @@ const api = express.Router();
 
 api
   .route("/")
-  .get(getJobadds)
+  // .get(getJobadds)
   .post(createJobadd)
 
 api

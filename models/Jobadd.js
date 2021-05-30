@@ -23,21 +23,21 @@ const JobaddSchema = new Schema({
     required: [true, 'Please add a description']
   },
   
-  addWrkt: {
-    type: Schema.ObjectId,
-    ref: 'Worktime',
-    required: [true, 'Please add a worktime']
-  },
-  addComp: {
-    type: Schema.ObjectId,
-    ref: 'User',
-    required: [true, 'Please add an id'],
-    maxlength: [250, 'The id can be max 250 chars long']
-  },
-  addContr: {
-    type: Schema.ObjectId,
-    ref: 'Contract'
-  }
+  // addWrkt: {
+  //   type: Schema.ObjectId,
+  //   ref: 'Worktime',
+  //   required: [true, 'Please add a worktime']
+  // },
+  // addComp: {
+  //   type: Schema.ObjectId,
+  //   ref: 'User',
+  //   required: [true, 'Please add an id'],
+  //   maxlength: [250, 'The id can be max 250 chars long']
+  // },
+  // addContr: {
+  //   type: Schema.ObjectId,
+  //   ref: 'Contract'
+  // }
   
 });
 

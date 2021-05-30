@@ -93,7 +93,7 @@ const deleteJobadd = async (req, res, next) => {
 
 module.exports = {
   getJobadd,
-  getJobadds,
+  // getJobadds,
   createJobadd,
   updateJobadd,
   deleteJobadd
