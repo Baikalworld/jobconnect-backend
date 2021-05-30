@@ -19,7 +19,7 @@ const JobaddSchema = new Schema({
     required: [true, 'Please add a description']
   },
   addFull: {
-    type: Array,
+    type: [String],
     required: [true, 'Please add a description']
   },
   
@@ -41,6 +41,5 @@ const JobaddSchema = new Schema({
   
 });
 
-User --> users
-Movie --> movies
+
 module.exports = mongoose.model('Jobadd', JobaddSchema);
