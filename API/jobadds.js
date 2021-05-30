@@ -1,24 +1,24 @@
-// const express = require("express");
+const express = require("express");
 
-// const {
-//   getJobadd,
-//   getJobadds,
-//   createJobadd,
-//   deleteJobadd,
-//   updateJobadd
-// } = require('../controllers/jobadds.js')
+const {
+  getJobadd,
+  getJobadds,
+  createJobadd,
+  deleteJobadd,
+  updateJobadd
+} = require('../controllers/jobadds.js')
 
-// const api = express.Router();
+const api = express.Router();
 
-// api
-//   .route("/")
-//   .get(getJobadds)
-//   .post(createJobadd)
+api
+  .route("/")
+  .get(getJobadds)
+  .post(createJobadd)
 
-// api
-//   .route('/:id')
-//   .get(getJobadd)
-//   .delete(deleteJobadd)
-//   .put(updateJobadd);
+api
+  .route('/:id')
+  .get(getJobadd)
+  .delete(deleteJobadd)
+  .put(updateJobadd);
 
-// module.exports = api;
+module.exports = api;
