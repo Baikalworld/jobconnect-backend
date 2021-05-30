@@ -1,7 +1,7 @@
-const mongoose = require('mongoose');
-const { Schema } = mongoose;
+// const mongoose = require('mongoose');
+// const { Schema } = mongoose;
 
-const JobaddSchema = new Schema({
+// const JobaddSchema = new Schema({
   // addTitle: {
   //   type: String,
   //   required: [true, 'Please add a title'],
@@ -39,8 +39,8 @@ const JobaddSchema = new Schema({
   //   ref: 'Contract'
   // }
   
-});
+// });
 
 // User --> users
 // Movie --> movies
-module.exports = mongoose.model('Jobadd', JobaddSchema);
+// module.exports = mongoose.model('Jobadd', JobaddSchema);
