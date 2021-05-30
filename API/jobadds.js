@@ -3,9 +3,9 @@ const express = require("express");
 const {
   getJobadd,
   getJobadds,
-  createJobadd
-  // deleteJobadd,
-  // updateJobadd
+  createJobadd,
+  deleteJobadd,
+  updateJobadd
 } = require('../controllers/jobadds.js')
 
 const api = express.Router();
@@ -18,7 +18,7 @@ api
 api
   .route('/:id')
   .get(getJobadd)
-  // .delete(deleteJobadd)
-  // .put(updateJobadd);
+  .delete(deleteJobadd)
+  .put(updateJobadd);
 
 module.exports = api;

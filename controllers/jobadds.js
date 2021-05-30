@@ -62,41 +62,41 @@ const createJobadd = async (req, res, next) => {
   
 }
 
-// const updateJobadd = async (req, res, next) => {
-//   try {
-//     const { id } = req.params;
-//     const { add_id, add_title, add_date } = req.body;
+const updateJobadd = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const { addId, addTitle, addDate } = req.body;
 
-//     const jobadd = await Jobadd.findByIdAndUpdate(id, { add_id, add_title, add_date }, { new: true })
+    const jobadd = await Jobadd.findByIdAndUpdate(id, { addId, addTitle, addDate }, { new: true })
 
-//     res.json({
-//       success: true,
-//       msg: `jobadd with id ${id} updated`,
-//       data: jobadds
-//     })
-//   } catch(err) {
-//     next(err)
-//   }
-// }
-// const deleteJobadd = async (req, res, next) => {
-//   try {
-//     const { id } = req.params;
+    res.json({
+      success: true,
+      msg: `jobadd with id ${id} updated`,
+      data: jobadds
+    })
+  } catch(err) {
+    next(err)
+  }
+}
+const deleteJobadd = async (req, res, next) => {
+  try {
+    const { id } = req.params;
 
-//     const jobadd = await Jobadd.findByIdAndDelete(id);
-//     res.json({
-//       success: true,
-//       msg: `jobadd with id ${id} deleted`,
-//       data: jobadds
-//     });
-//   } catch(err) {
-//     next(err)
-//   }
-// }
+    const jobadd = await Jobadd.findByIdAndDelete(id);
+    res.json({
+      success: true,
+      msg: `jobadd with id ${id} deleted`,
+      data: jobadds
+    });
+  } catch(err) {
+    next(err)
+  }
+}
 
 module.exports = {
   getJobadd,
   getJobadds,
-  createJobadd
-  // updateJobadd,
-  // deleteJobadd
+  createJobadd,
+  updateJobadd,
+  deleteJobadd
 }
