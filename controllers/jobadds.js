@@ -1,4 +1,6 @@
+const mongoose = require('mongoose');
 const Jobadd = require('../models/Jobadd');
+
 
 const getJobadds = async (req, res, next) => {
   try {
