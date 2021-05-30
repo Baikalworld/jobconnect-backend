@@ -19,7 +19,7 @@ const JobaddSchema = new Schema({
     required: [true, 'Please add a description']
   },
   addFull: {
-    type: [String],
+    type: Array,
     required: [true, 'Please add a description']
   },
   
