@@ -4,7 +4,7 @@ require('colors');
 const express = require('express');
 const cors = require('cors');
 
-// const jobadds = require('./api/jobadds');
+const jobadds = require('./api/jobadds');
 const errorHandler = require('./middlewares/error')
 const connectDB = require('./dbinit');
 
