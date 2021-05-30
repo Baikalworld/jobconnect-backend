@@ -22,7 +22,7 @@ const JobaddSchema = new Schema({
     type: [String],
     required: [true, 'Please add a description']
   },
-  /*
+  
   addWrkt: {
     type: Schema.ObjectId,
     ref: 'Worktime',
@@ -38,7 +38,7 @@ const JobaddSchema = new Schema({
     type: Schema.ObjectId,
     ref: 'Contract'
   }
-  */
+  
 });
 
 // User --> users
