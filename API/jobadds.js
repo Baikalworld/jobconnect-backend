@@ -1,12 +1,12 @@
 const express = require("express");
 
-const {
-  getJobadd,
-  getJobadds,
-  createJobadd,
-  deleteJobadd,
-  updateJobadd
-} = require('../controllers/jobadds.js')
+// const {
+//   getJobadd,
+//   getJobadds,
+//   createJobadd,
+//   deleteJobadd,
+//   updateJobadd
+// } = require('../controllers/jobadds.js')
 
 const api = express.Router();
 
