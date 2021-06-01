@@ -40,15 +40,19 @@ const createJobadd = async (req, res, next) => {
         addDate,
         addLocation,
         addDesc,
-        addFull
+        addFull,
+        addContr,
+        addWrkt
       } = req.body;
 
       const jobadd = await Jobadd.create({
         addTitle,
         addDate,
+        addWrkt,
         addLocation,
         addDesc,
-        addFull        
+        addFull,
+        addContr      
       })
 
       res.json({
