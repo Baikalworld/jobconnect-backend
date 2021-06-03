@@ -27,8 +27,8 @@ const createUser = async (req, res, next) => {
   try {
 
     // insert user
-    const { name, email, password } = req.body;
-    const user = await User.create({ name, email, password });
+    const { username, email, password, role } = req.body;
+    const user = await User.create({ username, email, password, role });
 
     // create token
     const token = user.getSignedJwtToken();
@@ -90,7 +90,7 @@ const updateUser = async (req, res, next) => {
   }
 };
 
-const getUserOrders = async (req, res, next) => {
+/*const getUserOrders = async (req, res, next) => {
   // ?price[lte]=2000
   try {
     const { id } = req.params;
@@ -101,7 +101,7 @@ const getUserOrders = async (req, res, next) => {
   } catch(err) {
     next(err)
   }
-};
+};*/
 
 const getMe = async (req, res, next) => {
   const user = await User.findById(req.user.id);
@@ -118,7 +118,7 @@ module.exports = {
   createUser,
   updateUser,
   deleteUser,
-  getUserOrders,
+  //getUserOrders,
   login,
   getMe
 }

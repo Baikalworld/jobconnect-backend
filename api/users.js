@@ -14,7 +14,8 @@ const api = express.Router();
 api
   .route("/")
   .get(getUsers)
-
+  .post(createUser)
+  
 api
   .route('/:id')
   .get(getUser)

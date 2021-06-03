@@ -7,10 +7,7 @@ const UserSchema = new Schema({
     required: [true, 'Please add the name of your company'],
     maxlength: [50, 'The name can be max 50 chars long']
   },
-  adress: {
-    type: String,
-    required: [true, 'Please add the company adress, street, city id and city, country']
-  },
+
   email: {
     type: String,
     required: [true, 'Please add an email'],
@@ -26,7 +23,12 @@ const UserSchema = new Schema({
     required: [true, 'Please add a password'],
     minlength: 8,
     select: false
-  }
+  },
+
+  role: {
+    type: [String],
+    required: [true, 'Please choose your role (company, bootcamp, developer']
+  },
 });
   
 
