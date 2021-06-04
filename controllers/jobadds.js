@@ -3,8 +3,11 @@ const Jobadd = require('../models/Jobadd');
 
 
 const getJobadds = async (req, res, next) => {
+  //// ?addLocation=Cologne
   try {
-    const jobadds = await Jobadd.find();
+    const queryStr = JSON.stringify(req.query).replace(/\b(gt|gte|lt|lte|in)\b/g, match => `$${match}`)
+    console.log(queryStr)
+    const jobadds = await Jobadd.find(JSON.parse(queryStr));
 
     res.json({
       success: true,
