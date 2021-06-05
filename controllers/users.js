@@ -2,7 +2,7 @@ const User = require('../models/User');
 //const Order = require('../models/Order');
 const mongoose = require('mongoose');
 
-const { ObjectId } = mongoose.Types;
+//const { ObjectId } = mongoose.Types;
 
 const getUsers = async (req, res, next) => {
   try {
@@ -30,7 +30,7 @@ const createUser = async (req, res, next) => {
     const { username, email, password, role } = req.body;
     const user = await User.create({ username, email, password, role });
 
-    // create token
+    // create token (comment)
     const token = user.getSignedJwtToken();
 
     res.json({ success: true, token })

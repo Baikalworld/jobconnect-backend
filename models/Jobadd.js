@@ -33,8 +33,14 @@ const JobaddSchema = new Schema({
   //   required: [true, 'Please add an id'],
   //   maxlength: [250, 'The id can be max 250 chars long']
   // },
+/*
+  addTech: {
+    type: [Schema.ObjectId],
+    ref: "Technology"
+  }
+  */
   addContr: {
-    type: String,
+      type: String,
     required: [true, 'Please add contract type']
   }
   
