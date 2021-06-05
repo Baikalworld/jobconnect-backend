@@ -33,8 +33,8 @@ const JobaddSchema = new Schema({
   //   required: [true, 'Please add an id'],
   //   maxlength: [250, 'The id can be max 250 chars long']
   // },
-/*
-  addTech: {
+  
+/*addTech: {
     type: [Schema.ObjectId],
     ref: "Technology"
   }
@@ -45,6 +45,5 @@ const JobaddSchema = new Schema({
   }
   
 });
-
 
 module.exports = mongoose.model('Jobadd', JobaddSchema);
