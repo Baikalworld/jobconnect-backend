@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-const BootcampSchema = new Schema({
+const CompanySchema = new Schema({
   userid: {
     type: String,
     required: [true, 'Please add a userid'],
@@ -32,4 +32,4 @@ const BootcampSchema = new Schema({
 });
 
 
-module.exports = mongoose.model('Bootcamp', BootcampSchema);
+module.exports = mongoose.model('Company', CompanySchema);
