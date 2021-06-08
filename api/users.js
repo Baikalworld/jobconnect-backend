@@ -6,7 +6,7 @@ const {
   deleteUser,
   //getUserOrders
 } = require('../controllers/users');
-//const protect = require('../middleware/auth');
+const protect = require('../middlewares/auth');
 
 const api = express.Router();
 
@@ -15,10 +15,10 @@ api
   .get(getUsers)
   
 api
-  .route('/:id')
-  .get(getUser)
-  .put(updateUser)
-  .delete(deleteUser)
+.route('/:id')
+.get(protect, getUser)
+.put(protect, updateUser)
+.delete(protect, deleteUser)
 
 // locahost:5000/users/:id/orders
 /*api

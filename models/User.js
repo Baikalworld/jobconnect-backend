@@ -8,7 +8,7 @@ const { Schema } = mongoose;
 const UserSchema = new Schema({
   username: {
     type: String,
-    required: [true, 'Please add the name of your company'],
+    required: [true, 'Please add a name'],
     maxlength: [50, 'The name can be max 50 chars long']
   },
 
