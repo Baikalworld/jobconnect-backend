@@ -33,7 +33,7 @@ const createUser = async (req, res, next) => {
     // create token (comment)
     const token = user.getSignedJwtToken();
 
-    res.json({ success: true, token })
+    res.json({ success: true, msg: 'new user created', token }) 
   } catch(err) {
     next(err)
   }
@@ -50,7 +50,7 @@ const login = async (req, res, next) => {
     const user = await User.findOne({ email }).select('+password');
 
     if (!user) {
-      res.status(401).send('Invalid credentials')
+      res.status(401).send('Email not found')
     }
 
     const doesPassMatch = await user.matchPassword(password);
