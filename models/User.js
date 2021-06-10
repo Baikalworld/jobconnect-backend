@@ -30,7 +30,7 @@ const UserSchema = new Schema({
   },
 
   role: {
-    type: [String],
+    type: String,
     required: [true, 'Please choose your role (company, bootcamp, developer']
   },
 });
