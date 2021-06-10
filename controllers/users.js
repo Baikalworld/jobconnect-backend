@@ -1,8 +1,8 @@
 const User = require('../models/User');
-//const Order = require('../models/Order');
+const Company = require('../models/Company');
 const mongoose = require('mongoose');
 
-//const { ObjectId } = mongoose.Types;
+const { ObjectId } = mongoose.Types;
 
 const getUsers = async (req, res, next) => {
   try {
@@ -90,18 +90,32 @@ const updateUser = async (req, res, next) => {
   }
 };
 
-/*const getUserOrders = async (req, res, next) => {
-  // ?price[lte]=2000
+const getUserCompanies = async (req, res, next) => {
+  // /users/{userId}/companies
+  // /users/{userId}/applications
+  // developers/?technologies=[React,Node]
   try {
     const { id } = req.params;
-    const queryStr = JSON.stringify(req.query).replace(/\b(gt|gte|lt|lte|in)\b/g, match => `$${match}`)
+    //const queryStr = JSON.stringify(req.query).replace(/\b(gt|gte|lt|lte|in)\b/g, match => `$${match}`)
 
-    const orders = await Order.find({ userId: ObjectId(id), ...JSON.parse(queryStr) })
-    res.json({ success: true, msg: `orders of user with user id ${id} retrieved`, data: orders })
+    const companies = await Company.find({ userId: ObjectId(id)/*, ...JSON.parse(queryStr)*/ })
+    res.json({ success: true, msg: `company of user with user id ${id} retrieved`, data: companies })
   } catch(err) {
     next(err)
   }
-};*/
+};
+
+
+/*const createUserCompanies = async(req, res, next) =>{
+  const {obj_id} = req.body;
+  const { id} = req.params;
+  try{
+    const getUser = await User.create(id, { $push :{ companies : obj_id}})
+    res.json(getUser);
+  }
+  catch(e) {
+    res.status(500).send(e.message);
+  }*/
 
 const getMe = async (req, res, next) => {
   const user = await User.findById(req.user.id);
@@ -118,7 +132,8 @@ module.exports = {
   createUser,
   updateUser,
   deleteUser,
-  //getUserOrders,
+  getUserCompanies,
+  //createUserCompanies,
   login,
   getMe
 }

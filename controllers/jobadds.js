@@ -4,6 +4,7 @@ const Jobadd = require('../models/Jobadd');
 
 const getJobadds = async (req, res, next) => {
   //// ?addLocation=Cologne
+  /// ?addWrtk=fulltime
   try {
     const queryStr = JSON.stringify(req.query).replace(/\b(gt|gte|lt|lte|in)\b/g, match => `$${match}`)
     console.log(queryStr)
@@ -59,7 +60,8 @@ const createJobadd = async (req, res, next) => {
         addDesc,
         addFull,
         addContr,
-        addWrkt
+        addWrkt,
+        addComp
       } = req.body;
 
       const jobadd = await Jobadd.create({
@@ -69,7 +71,8 @@ const createJobadd = async (req, res, next) => {
         addLocation,
         addDesc,
         addFull,
-        addContr      
+        addContr,
+        addComp  
       })
 
       res.json({
