@@ -39,7 +39,7 @@ const getJobadd = async (req, res, next) => {
   try {
     const { id } = req.params;
     
-    const jobadd = await Jobadd.findById(id);
+    const jobadd = await Jobadd.findById(id).populate('addComp');
     res.json({
       success: true,
       msg: 'show selected jobadd',
