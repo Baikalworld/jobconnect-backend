@@ -8,7 +8,7 @@ const getJobadds = async (req, res, next) => {
   try {
     const queryStr = JSON.stringify(req.query).replace(/\b(gt|gte|lt|lte|in)\b/g, match => `$${match}`)
     console.log(queryStr)
-    const jobadds = await Jobadd.find(JSON.parse(queryStr));
+    const jobadds = await Jobadd.find(JSON.parse(queryStr)).populate('addComp');
 
     res.json({
       success: true,
