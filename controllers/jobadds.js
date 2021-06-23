@@ -4,10 +4,11 @@ const Jobadd = require('../models/Jobadd');
 
 const getJobadds = async (req, res, next) => {
   //// ?addLocation=Cologne
+  /// ?addWrtk=fulltime
   try {
     const queryStr = JSON.stringify(req.query).replace(/\b(gt|gte|lt|lte|in)\b/g, match => `$${match}`)
     console.log(queryStr)
-    const jobadds = await Jobadd.find(JSON.parse(queryStr));
+    const jobadds = await Jobadd.find(JSON.parse(queryStr)).populate('addComp');
 
     res.json({
       success: true,
@@ -38,7 +39,7 @@ const getJobadd = async (req, res, next) => {
   try {
     const { id } = req.params;
     
-    const jobadd = await Jobadd.findById(id);
+    const jobadd = await Jobadd.findById(id).populate('addComp');
     res.json({
       success: true,
       msg: 'show selected jobadd',
@@ -59,7 +60,8 @@ const createJobadd = async (req, res, next) => {
         addDesc,
         addFull,
         addContr,
-        addWrkt
+        addWrkt,
+        addComp
       } = req.body;
 
       const jobadd = await Jobadd.create({
@@ -69,7 +71,8 @@ const createJobadd = async (req, res, next) => {
         addLocation,
         addDesc,
         addFull,
-        addContr      
+        addContr,
+        addComp  
       })
 
       res.json({

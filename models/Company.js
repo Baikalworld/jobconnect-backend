@@ -3,7 +3,8 @@ const { Schema } = mongoose;
 
 const CompanySchema = new Schema({
   userid: {
-    type: String,
+    type: Schema.ObjectId,
+    ref: 'User',
     required: [true, 'Please add a userid'],
     maxlength: [50, 'The title can be max 50 chars long']
   },

@@ -27,23 +27,20 @@ const JobaddSchema = new Schema({
     type: String,
     required: [true, 'Please add a worktime']
   },
-  // addComp: {
-  //   type: Schema.ObjectId,
-  //   ref: 'User',
-  //   required: [true, 'Please add an id'],
-  //   maxlength: [250, 'The id can be max 250 chars long']
-  // },
-  
+  addComp: {
+    type: Schema.ObjectId,
+    ref: 'Company',
+    required: [true, 'Please add a company']
+  },
+  addContr: {
+      type: String,
+    required: [true, 'Please add contract type']
+  }
 /*addTech: {
     type: [Schema.ObjectId],
     ref: "Technology"
   }
   */
-  addContr: {
-      type: String,
-    required: [true, 'Please add contract type']
-  }
-  
 });
 
 module.exports = mongoose.model('Jobadd', JobaddSchema);
